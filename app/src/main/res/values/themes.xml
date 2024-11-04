@@ -6,4 +6,9 @@
     </style>
 
     <style name="Theme.RoomWordSample" parent="Base.Theme.RoomWordSample" />
+    <style name="Theme.RoomWordSample.WithActionBar" parent="Base.Theme.RoomWordSample" >
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">false</item>
+        <item name="toolbarStyle">@style/Widget.Material3.Toolbar.Surface</item>
+    </style>
 </resources>
