@@ -29,4 +29,8 @@ public class WordRepository {
     public void insert(Word word) {
         WordRoomDatabase.databaseWriteExecutor.execute(() -> mWordDao.insert(word));
     }
+
+    public void deleteAll(){
+        WordRoomDatabase.databaseWriteExecutor.execute(() -> mWordDao.deleteAll());
+    }
 }
