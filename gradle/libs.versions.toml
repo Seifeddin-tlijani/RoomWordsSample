@@ -9,6 +9,7 @@ constraintlayout = "2.1.4"
 
 room = "2.6.1"
 lifecycle = "2.8.6"
+activity = "1.8.0"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -26,6 +27,7 @@ room-testing = { group = "androidx.room", name = "room-testing", version.ref = "
 lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "lifecycle" }
 lifecycle-livedata = { group = "androidx.lifecycle", name = "lifecycle-livedata", version.ref = "lifecycle" }
 lifecycle-common-java8 = { group = "androidx.lifecycle", name = "lifecycle-common-java8", version.ref = "lifecycle" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 

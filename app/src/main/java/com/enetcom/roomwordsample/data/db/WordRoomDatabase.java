@@ -30,7 +30,6 @@ public abstract class WordRoomDatabase extends RoomDatabase {
             databaseWriteExecutor.execute(() -> {
                 WordDao dao = INSTANCE.wordDao();
                 dao.deleteAll();
-
                 Word word = new Word("Hello");
                 dao.insert(word);
                 word = new Word("World");
