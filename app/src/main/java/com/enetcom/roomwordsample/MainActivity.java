@@ -2,9 +2,11 @@ package com.enetcom.roomwordsample;
 
 import android.os.Bundle;
 
+import com.enetcom.roomwordsample.adapter.WordListAdapter;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.view.View;
 
@@ -18,16 +20,30 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    private WordViewModel mWordViewModel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbar);
 
+        WordListAdapter mAdapter = new WordListAdapter();
+        binding.contentMain.recyclerview.setAdapter(mAdapter);
+        binding.contentMain.recyclerview.setHasFixedSize(true);
+
+        mWordViewModel = new ViewModelProvider(this).get(WordViewModel.class);
+
+        mWordViewModel.getAllWords().observe(this, words -> {
+            // Mettre à jour la copie en cache des mots dans l'adaptateur.
+            mAdapter.setWords(words);
+        });
 
 
         binding.fab.setOnClickListener(new View.OnClickListener() {
